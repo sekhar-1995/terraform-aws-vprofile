@@ -6,7 +6,7 @@ resource "aws_security_group" "vprofile-bean-elb-sg" {
     from_port = 0
     protocol = "-1" //here -1 means all the protocol
     to_port = 0
-    cidr_block = [0.0.0.0/0] // all the outbound traffic allowed to go anywhere
+    cidr_blocks = [0.0.0.0/0] // all the outbound traffic allowed to go anywhere
   }
 
   ingress {                // it the load balancer security group, so we will allow the connection on "80" port
@@ -47,7 +47,7 @@ resource "aws_security_group" "vprofile-prod-sg" {
     from_port  = 0
     protocol   = "-1" //here -1 means all the protocol
     to_port    = 0
-    cidr_block = [0.0.0.0/0] // all the outbound traffic allowed to go anywhere
+    cidr_blocks = [0.0.0.0/0] // all the outbound traffic allowed to go anywhere
   }
   //ssh to beanstalk instance , this will be the part of private subnet. So we can not access it form public network. we can access it form bastion host.
   //bastion group will be the part of public network. Form their we will do ssh to beanstalk.
@@ -69,7 +69,7 @@ resource "aws_security_group" "vprofile-backend-sg" {
     from_port  = 0
     protocol   = "-1" //here -1 means all the protocol
     to_port    = 0
-    cidr_block = [0.0.0.0/0] // all the outbound traffic allowed to go anywhere
+    cidr_blocks = [0.0.0.0/0] // all the outbound traffic allowed to go anywhere
   }
 
   ingress {
@@ -88,7 +88,7 @@ resource "aws_security_group_rule" "sec_group_allow_itself" {
   to_port =65535
   protocol = "-1"
   security_group_id = aws_security_group.vprofile-backend-sg.id   // id of the security group that we want to update
-  source_security_group_id = aws_security_group.vprofile-backend-sg.id //form which security group id you want to allow the connection. 
+  source_security_group_id = aws_security_group.vprofile-backend-sg.id //form which security group id you want to allow the connection.
 }
 
 
