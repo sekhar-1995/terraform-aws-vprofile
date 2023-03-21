@@ -75,7 +75,7 @@ variable "Zone3" {
 }
 
 //Now we will create "vpc CIDR"
-variable "vpcCIDR" {
+variable "VpcCIDR" {
   default = "172.21.0.0/16"
 }
 
