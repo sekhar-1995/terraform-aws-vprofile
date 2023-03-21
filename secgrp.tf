@@ -89,7 +89,7 @@ resource "aws_security_group_rule" "sec_group_allow_itself" {
   protocol                 = "-1"
   security_group_id        = aws_security_group.vprofile-backend-sg.id // id of the security group that we want to update
   source_security_group_id = aws_security_group.vprofile-backend-sg.id //form which security group id you want to allow the connection.
-}
+
 
 
 
