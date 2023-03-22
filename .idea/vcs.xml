@@ -3,6 +3,5 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/.terraform/modules/vpc" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/terraform-aws-vprofile" vcs="Git" />
   </component>
 </project>
