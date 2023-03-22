@@ -78,6 +78,13 @@ resource "aws_security_group" "vprofile-backend-sg" {
     to_port         = 0
     security_groups = [aws_security_group.vprofile-prod-sg.id] // vprofile-backend-sg is the security group of beanstalk instance
   }
+
+  ingress {
+    from_port       = 3306
+    protocol        = "tcp"
+    to_port         = 3306
+    security_groups = [aws_security_group.vprofile-bastion-sg.id]
+  }
 }
 
 //these instances rds,activeMQ, elastic cache will interact with each other, so we ant to allow all traffic form its own security group id.
