@@ -71,8 +71,8 @@ resource "aws_elastic_beanstalk_environment" "vprofile-bean-prod" {
   }
 
   setting { // it is thw name of the environment
-    name      = "aws:elasticbeanstalk:application:environment"
-    namespace = "environment"
+    namespace      = "aws:elasticbeanstalk:application:environment"
+    name = "environment"
     value     = "prod"
   }
 
