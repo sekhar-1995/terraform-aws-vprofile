@@ -31,12 +31,12 @@ variable "MYIP" { # Here "MYIP" is a "variable" which will use security group in
 #Now we will use AmazonActiveMQ which is the replacement for RabbitMQ
 #When we will create AmazonActiveMQ, we need to provide "user name & password" , these we will define as variables.
 
-variable "rmquser" {
+variable rmquser {
   default = "rabbit"
 }
 
-variable "rmqpass" {
-  default = "rath@1111"
+variable rmqpass {
+  default = "rath@123456789"
 }
 
 # Now we will create RDS. And we'll have database username and password, which we're also going to use to log to our RDS instance and provision it with our schemas. 
