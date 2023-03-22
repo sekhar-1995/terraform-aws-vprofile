@@ -31,11 +31,11 @@ variable "MYIP" { # Here "MYIP" is a "variable" which will use security group in
 #Now we will use AmazonActiveMQ which is the replacement for RabbitMQ
 #When we will create AmazonActiveMQ, we need to provide "user name & password" , these we will define as variables.
 
-variable rmquser {
+variable "rmquser" {
   default = "rabbit"
 }
 
-variable rmqpass {
+variable "rmqpass" {
   default = "rath@123456789"
 }
 
