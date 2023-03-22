@@ -4,7 +4,7 @@ resource "aws_elastic_beanstalk_environment" "vprofile-bean-prod" {
   solution_stack_name = "64bit Amazon Linux 2 v4.3.5 running Tomcat 8.5 Corretto 11"
   //we can found this from aws beanstalk doccumentation on ""hssicorp--> now we will go to "solution-stalk-name "
   //--> click on "Amazon API Doccumentation"--> select tomcat version
-  cname_prefix = "vprofile-prod-domain"
+  cname_prefix = "vprofile-bean-prod-domain"
   setting {
     name      = "VPCId"
     namespace = "aws:ec2:vpc"
